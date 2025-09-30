@@ -14,7 +14,7 @@ def clean_text(text):
     return text
 
 def load_sample_data():
-    df = pd.read_csv("sample_data.csv")
+    df = pd.read_csv("dataset.csv")
     return df
 
 def train_model(df):
@@ -47,7 +47,7 @@ if os.path.exists("sentiment_model.pkl") and os.path.exists("vectorizer.pkl"):
     model = joblib.load("sentiment_model.pkl")
     vectorizer = joblib.load("vectorizer.pkl")
 else:
-    df = load_sample_data()
+    df = load_dataset()
     model, vectorizer, acc, f1 = train_model(df)
     st.write(f"Model trained. Accuracy: {acc:.2f}, F1 score: {f1:.2f}")
 
@@ -64,7 +64,7 @@ if st.button("Predict Sentiment"):
 st.markdown("---")
 st.subheader("Retrain Model (optional)")
 if st.button("Retrain Model"):
-    df = load_sample_data()
+    df = load_dataset()
     model, vectorizer, acc, f1 = train_model(df)
     st.info(f"Model retrained! Accuracy: {acc:.2f}, F1 score: {f1:.2f}")
 
