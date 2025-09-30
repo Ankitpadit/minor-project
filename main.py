@@ -13,7 +13,7 @@ def clean_text(text):
     text = text.lower()
     return text
 
-def load_sample_data():
+def load_dataset():
     df = pd.read_csv("dataset.csv")
     return df
 
