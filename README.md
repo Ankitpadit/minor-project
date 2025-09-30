@@ -12,7 +12,7 @@ Analyze sentiment (positive, negative, neutral) of Tweets using a machine learni
 
 ## Files
 - `main.py`: Main script (training + prediction)
-- `sample_data.csv`: Sample labelled data for training
+- `dataset.csv`: Sample labelled data for training
 - `requirements.txt`: Dependencies
 
 ## How to Run
