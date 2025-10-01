@@ -15,9 +15,9 @@ def clean_text(text):
     return text
 
 # ---------- Load Dataset ----------
-def load_dataset():
+def load_balanced_dataset():
     # Sentiment140 dataset format
-    df = pd.read_csv("dataset.csv", encoding="latin-1", header=None)
+    df = pd.read_csv("balanced_dataset.csv", encoding="latin-1", header=None)
     df.columns = ["sentiment", "id", "date", "query", "user", "text"]
 
     # Convert sentiment 4 → 1 (positive), keep 0 as negative
