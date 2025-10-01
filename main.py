@@ -67,7 +67,7 @@ if os.path.exists("sentiment_model.pkl") and os.path.exists("vectorizer.pkl"):
     model = joblib.load("sentiment_model.pkl")
     vectorizer = joblib.load("vectorizer.pkl")
 else:
-    df = load_dataset()
+    df = load_balanced_dataset()
     model, vectorizer, acc, f1 = train_model(df)
     st.write(f"✅ Model trained. Accuracy: {acc:.2f}, F1 score: {f1:.2f}")
 
